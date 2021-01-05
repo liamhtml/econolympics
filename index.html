@@ -181,7 +181,7 @@
         }
       };
         
-      var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12"]
+      var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12"];
       
             // run through every value of "players"
             for (var i = 0; i < players.length; i++) {
@@ -196,6 +196,8 @@
               // set the innerHTML of these elements to the current player being looped through's username and score!
               playerName.innerHTML = username;
               playerScore.innerHTML = score;
+              document.getElementById("name" + playersObj.players[i].id).innerHTML = username;
+              document.getElementById("score" + playersObj.players[i].id).innerHTML = score;
         }
       </script>
     </body>

@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Econolympics Leaderboard</title>
     <style>
+    body {
+      font-family: sans-serif;
+      color: black;
+    }
     #container {
-      width: 600px;
+      width: 80%;
       height: auto;
+      margin: 0 auto;
     }
 
     .row {
@@ -16,14 +21,21 @@
       display: block;
       width: 100%;
       height: 40px;
-      border-bottom: 1px solid #AFAFAF;
+      border: 1px solid #e0e0e0;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
+      -webkit-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
+      -moz-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
     }
 
     .name {
       position: relative;
       display: inline-block;
-      width: 75%;
+      width: 50%;
       line-height: 45px;
+      padding-left: 10px;
+      border-radius: 10px;
     }
 
     .score {
@@ -34,15 +46,22 @@
 
     .row:nth-child(1) {
       background: gold;
+      border: 1px solid gold;
+      color: white;
     }
 
     .row:nth-child(2) {
       background: #c0c0c0;
+      border: 1px solid #c0c0c0;
+      color: white;
     }
 
     .row:nth-child(3) {
       background: #cd7f32;
+      border: 1px solid #cd7f32;
+      color: white;
     }
+    
     </style>
   </head>
     <body>

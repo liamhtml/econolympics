@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Econolympics Leaderboard</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
-    
+
     body {
       font-family: 'Roboto', sans-serif;
       color: black;
     }
+
     #container {
       width: 80%;
       height: auto;
       margin: 0 auto;
+      list-style: none;
+      counter-reset: li;
     }
 
     .row {
-      position: relative;
-      display: block;
       width: 100%;
       height: 40px;
       border: 1px solid #e0e0e0;
@@ -31,14 +32,23 @@
       -webkit-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
       -moz-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
       transition: 0.3s;
+      counter-increment: li;
     }
+
+    .row::before {
+      content: counter(li);
+      color: black;
+      display: inline-block;
+      width: 1em;
+      margin-left: -2em;
+      font-weight: bold;
+    }
+
     .row:hover {
       transform: scale(1.05, 1.05);
     }
 
     .name {
-      position: relative;
-      display: inline-block;
       width: 50%;
       line-height: 40px;
       padding-left: 20px;
@@ -46,8 +56,6 @@
     }
 
     .score {
-      position: relative;
-      display: inline-block;
       width: auto;
       float: right;
       margin-top: 12px;
@@ -71,75 +79,41 @@
       border: 1px solid #cd7f32;
       color: white;
     }
-    
+
+
     </style>
   </head>
     <body>
       <h1 align="center">Econolympics Leaderboard</h1>
       <h3 align="center">Note: It may take a few seconds for leaderboard to update.</h3>
-      <div id="container">
-      <div class="row">
-        <div class="name">Player1</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player2</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player3</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player4</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player5</div><div class="score">0</div>
-      </div>
-      
-      <div class="row">
-        <div class="name">Player6</div><div class="score">0</div>
-      </div>
-      
-      <div class="row">
-        <div class="name">Player7</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player8</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player9</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player10</div><div class="score">0</div>
-      </div>
-
-      <div class="row">
-        <div class="name">Player11</div><div class="score">0</div>
-      </div>
-      
-      <div class="row">
-        <div class="name">Player12</div><div class="score">0</div>
-      </div>
-      </div>
-      <p align="center">ᵖᵒʷᵉʳᵉᵈ ᵇʸ ᵗʰᵉ <a href="https://ecoutfitter.onuniverse.com/">ᵉᶜᵒⁿᵒᵐʸᶜʳᵃᶠᵗ ᵒᵘᵗᶠᶦᵗᵗᵉʳ</a></p>
+      <ol id="container">
+        <li class="row"><span class="name">Player1</span><span class="score">20</span>
+        <li class="row"><span class="name">Player2</span><span class="score">89</span>
+        <li class="row"><span class="name">Player3</span><span class="score">10</span>
+        <li class="row"><span class="name">Player4</span><span class="score">35</span>
+        <li class="row"><span class="name">Player5</span><span class="score">96</span>
+        <li class="row"><span class="name">Player6</span><span class="score">12</span>
+        <li class="row"><span class="name">Player7</span><span class="score">20</span>
+        <li class="row"><span class="name">Player8</span><span class="score">89</span>
+        <li class="row"><span class="name">Player9</span><span class="score">10</span>
+        <li class="row"><span class="name">Player10</span><span class="score">92</span>
+        <li class="row"><span class="name">Player11</span><span class="score">63</span>
+        <li class="row"><span class="name">Player12</span><span class="score">87</span>
+      </ol>
+      <p align="center">ˢᵖᵒⁿˢᵒʳᵉᵈ ᵇʸ ᵗʰᵉ <a href="https://ecoutfitter.onuniverse.com/">ᵉᶜᵒⁿᵒᵐʸᶜʳᵃᶠᵗ ᵒᵘᵗᶠᶦᵗᵗᵉʳ</a></p>
       <script>
-              document.addEventListener('DOMContentLoaded', () => {
-                let elements = []
-                let container = document.querySelector('#container')
-                // Add each row to the array
-                container.querySelectorAll('.row').forEach(el => elements.push(el))
-                // Clear the container
-                container.innerHTML = ''
-                // Sort the array from highest to lowest
-                elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent)
-                // Put the elements back into the container
-                elements.forEach(e => container.appendChild(e))
-             })
+        document.addEventListener('DOMContentLoaded', () => {
+          let elements = []
+          let container = document.querySelector('#container')
+          // Add each row to the array
+          container.querySelectorAll('.row').forEach(el => elements.push(el))
+          // Clear the container
+          container.innerHTML = ''
+          // Sort the array from highest to lowest
+          elements.sort((a, b) => b.querySelector('.score').textContent - a.querySelector('.score').textContent)
+          // Put the elements back into the container
+          elements.forEach(e => container.appendChild(e))
+       })
       </script>
     </body>
   </html>

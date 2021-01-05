@@ -190,14 +190,14 @@
               // describe the score variable as the current player's score
               var score = playersObj.players[i].score;
               // describe the playerName variable as the name element of the current player being looped through
-              var playerName = document.getElementById("name" + playersObj.[players[i]].id);
+              var playerName = document.getElementById("name" + playersObj[players[i]].id);
               // describe the playerScore variable as the score element of the current player being looped through
-              var playerScore = document.getElementById("score" + playersObj.[players[i]].id);
+              var playerScore = document.getElementById("score" + playersObj[players[i]].id);
               // set the innerHTML of these elements to the current player being looped through's username and score!
               playerName.innerHTML = username;
               playerScore.innerHTML = score;
-              document.getElementById("name" + playersObj.[players[i]].id).innerHTML = test;
-              document.getElementById("score" + playersObj.[players[i]].id).innerHTML = 99;
+              document.getElementById("name" + playersObj[players[i]].id).innerHTML = "test";
+              document.getElementById("score" + playersObj[players[i]].id).innerHTML = 99;
         }
       </script>
     </body>

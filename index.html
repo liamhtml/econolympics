@@ -89,18 +89,18 @@
       <h1 align="center">Econolympics Leaderboard</h1>
       <h3 align="center">Note: It may take a few seconds for leaderboard to update.</h3>
       <ol id="container">
-        <li class="row"><span class="name" id="name1">Player1</span><span class="score" id="score1">20</span>
-        <li class="row"><span class="name" id="name2">Player2</span><span class="score" id="score2">89</span>
-        <li class="row"><span class="name" id="name3">Player3</span><span class="score" id="score3">10</span>
-        <li class="row"><span class="name" id="name4">Player4</span><span class="score" id="score4">35</span>
-        <li class="row"><span class="name" id="name5">Player5</span><span class="score" id="score5">96</span>
-        <li class="row"><span class="name" id="name6">Player6</span><span class="score" id="score6">12</span>
-        <li class="row"><span class="name" id="name7">Player7</span><span class="score" id="score7">20</span>
-        <li class="row"><span class="name" id="name8">Player8</span><span class="score" id="score8">89</span>
-        <li class="row"><span class="name" id="name9">Player9</span><span class="score" id="score9">120</span>
-        <li class="row"><span class="name" id="name10">Player10</span><span class="score" id="score10">92</span>
-        <li class="row"><span class="name" id="name11">Player11</span><span class="score" id="score11">63</span>
-        <li class="row"><span class="name" id="name12">Player12</span><span class="score" id="score12">87</span>
+        <li class="row"><span class="name" id="name1">Player1</span><span class="score" id="score1">0</span>
+        <li class="row"><span class="name" id="name2">Player2</span><span class="score" id="score2">0</span>
+        <li class="row"><span class="name" id="name3">Player3</span><span class="score" id="score3">0</span>
+        <li class="row"><span class="name" id="name4">Player4</span><span class="score" id="score4">0</span>
+        <li class="row"><span class="name" id="name5">Player5</span><span class="score" id="score5">0</span>
+        <li class="row"><span class="name" id="name6">Player6</span><span class="score" id="score6">0</span>
+        <li class="row"><span class="name" id="name7">Player7</span><span class="score" id="score7">0</span>
+        <li class="row"><span class="name" id="name8">Player8</span><span class="score" id="score8">0</span>
+        <li class="row"><span class="name" id="name9">Player9</span><span class="score" id="score9">0</span>
+        <li class="row"><span class="name" id="name10">Player10</span><span class="score" id="score10">0</span>
+        <li class="row"><span class="name" id="name11">Player11</span><span class="score" id="score11">0</span>
+        <li class="row"><span class="name" id="name12">Player12</span><span class="score" id="score12">0</span>
       </ol>
       <script>
        // auto-sorting script
@@ -116,33 +116,85 @@
           // Put the elements back into the container
           elements.forEach(e => container.appendChild(e))
        })
-        
-       // pulls data from players.json
-        // getJSON function
-        function getJSON(path) {
-            return fetch(path).then(response => response.json());
+       
+        // players object 
+        playersObj = {
+          "player1": {
+            "username": "This is player 1",
+            "id": 1,
+            "score": 0
+          },
+          "player2": {
+            "username": "This is player 2!",
+            "id": 2,
+            "score: 0
+          },
+          "player3": {
+            "username": "This is player 3",
+            "id": 3,
+            "score": 0
+          },
+          "player4": {
+            "username": "This is player 4",
+            "id": 4,
+            "score": 0
+          },
+          "player5": {
+            "username": "This is player 5",
+            "id": 5,
+            "score": 0
+          },
+          "player6": {
+            "username": "This is player 6",
+            "id": 6,
+            "score": 0
+          },
+          "player7": {
+            "username": "You get the idea",
+            "id": 7,
+            "score": 0
+          },
+          "player8": {
+            "username": "",
+            "id": 8,
+            "score": 0
+          },
+          "player9": {
+            "username": "",
+            "id": 9,
+            "score": 0
+          },
+          "player10": {
+            "username": "",
+            "id": 10,
+            "score": 0
+          },
+          "player11": {
+            "score": "",
+            "id": 11,
+            "points": 0
+          },
+          "player12": {
+            "username": "",
+            "id": 12,
+            "score": 0
+          }
         }
         
         // array of player values
         var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12",]
         
-        // run through every value of "players"
-        for (i = 0; i < players.length; i++) {
-          // get the JSON file and look for the value currently being looped through
-          getJSON('players.json').then(players[i] => {
-              // describe the username variable as the current player's username
-              var username = players[i].username;
-              // describe the score variable as the current player's score
-              var score = players[i].score;
-              // describe the playerName variable as the name element of the current player being looped through
-              var playerName = document.getElementById("name" + players[i].id);
-              // describe the playerScore variable as the score element of the current player being looped through
-              var playerScore = document.getElementById("score" + players[i].id);
-              // set the innerHTML of these elements to the current player being looped through's username and score!
-              playerName.innerHTML = username;
-              playerScore.innerHTML = score;
-          }
-        }
+        // describe the username variable as the current player's username
+        var username = playersObj.players[i].username;
+        // describe the score variable as the current player's score
+        var score = playersObj.players[i].score;
+        // describe the playerName variable as the name element of the current player being looped through
+        var playerName = document.getElementById("name" + playersObj.players[i].id);
+        // describe the playerScore variable as the score element of the current player being looped through
+        var playerScore = document.getElementById("score" + playersObj.players[i].id);
+        // set the innerHTML of these elements to the current player being looped through's username and score!
+        playerName.innerHTML = username;
+        playerScore.innerHTML = score;
       </script>
     </body>
   </html>

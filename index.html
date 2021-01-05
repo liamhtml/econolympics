@@ -116,7 +116,8 @@
           // Put the elements back into the container
           elements.forEach(e => container.appendChild(e))
        })
-              // players object 
+        
+       // players object 
        var playersObj = {
         "player1": {
           "username": "This is player 1",
@@ -180,19 +181,21 @@
         }
       };
         
-        // run through every value of "players"
-            for (var i = 0; i < playersObj.length; i++) {
-            // describe the username variable as the current player's username
-            var username = playersObj.players[i].username;
-            // describe the score variable as the current player's score
-            var score = playersObj.players[i].score;
-            // describe the playerName variable as the name element of the current player being looped through
-            var playerName = document.getElementById("name" + playersObj.players[i].id);
-            // describe the playerScore variable as the score element of the current player being looped through
-            var playerScore = document.getElementById("score" + playersObj.players[i].id);
-            // set the innerHTML of these elements to the current player being looped through's username and score!
-            playerName.innerHTML = username;
-            playerScore.innerHTML = score;
+      var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12"]
+      
+            // run through every value of "players"
+            for (var i = 0; i < players.length; i++) {
+              // describe the username variable as the current player's username
+              var username = playersObj.players[i].username;
+              // describe the score variable as the current player's score
+              var score = playersObj.players[i].score;
+              // describe the playerName variable as the name element of the current player being looped through
+              var playerName = document.getElementById("name" + playersObj.players[i].id);
+              // describe the playerScore variable as the score element of the current player being looped through
+              var playerScore = document.getElementById("score" + playersObj.players[i].id);
+              // set the innerHTML of these elements to the current player being looped through's username and score!
+              playerName.innerHTML = username;
+              playerScore.innerHTML = score;
         }
       </script>
     </body>

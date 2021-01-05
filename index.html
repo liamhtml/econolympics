@@ -183,8 +183,8 @@
         
       // pulls data from players.json
         // getJSON function
-        function getJSON(path) {
-            return fetch(path).then(response => response.json());
+        async function getJSON(path, callback) {
+          return callback(await fetch(path).then(r => r.json()));
         }
         
       var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12"];
@@ -192,7 +192,7 @@
         // run through every value of "players"
         for (var i = 0; i < players.length; i++) {
           // get the JSON file and look for the value currently being looped through
-          getJSON('players.json').then(players[i] => {
+          getJSON('players.json', players[i] => 
               // describe the username variable as the current player's username
               var username = players[i].username;
               // describe the score variable as the current player's score
@@ -204,6 +204,7 @@
               // set the innerHTML of these elements to the current player being looped through's username and score!
               playerName.innerHTML = username;
               playerScore.innerHTML = score;
+          );
         } 
       </script>
     </body>

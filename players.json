@@ -1,36 +1,36 @@
 {
   "player1": {
-    "username": "",
+    "username": "This is player 1",
     "id": 1,
     "score": 0
   },
   "player2": {
-    "username": "",
+    "username": "This is player 2!",
     "id": 2,
     "score: 0
   },
   "player3": {
-    "username": "",
+    "username": "This is player 3",
     "id": 3,
     "score": 0
   },
   "player4": {
-    "username": "",
+    "username": "This is player 4",
     "id": 4,
     "score": 0
   },
   "player5": {
-    "username": "",
+    "username": "This is player 5",
     "id": 5,
     "score": 0
   },
   "player6": {
-    "username": "",
+    "username": "This is player 6",
     "id": 6,
     "score": 0
   },
   "player7": {
-    "username": "",
+    "username": "You get the idea",
     "id": 7,
     "score": 0
   },

@@ -12,6 +12,11 @@
     body {
       font-family: 'Roboto', sans-serif;
       color: black;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      vertical-align: baseline;
     }
 
     #container {
@@ -89,6 +94,33 @@
       margin-right: auto;
     }
 
+    .event {
+      border: 1px solid #ececec;
+      width: 40vw;
+      height: 40vw;
+      text-align: center;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin: 10px;
+      box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
+      -webkit-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
+      -moz-box-shadow: 2px 4px 22px -14px rgba(0,0,0,0.8);
+      overflow: auto;
+    }
+
+    .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: 919px) {
+      .event {
+        width: 28vw;
+        height: 28vw;
+      }
+    }
     </style>
   </head>
     <body>
@@ -109,6 +141,25 @@
         <li class="row"><span class="name" id="name11">Player11</span><span class="score" id="score11">0</span>
         <li class="row"><span class="name" id="name12">Player12</span><span class="score" id="score12">0</span>
       </ol>
+      <h1 align="center">Info</h1>
+      <div class="event-container">
+        <div class="event">
+          <h2>Bacon Bash</h2>
+          <p>All players race around a MarioKart-style track on pig steeds.</p>
+        </div>
+        <div class="event">
+          <h2>BS Tower Game</h2>
+          <p>Two players climb to the top of ButterScotch Tower to reach the Flag first.</p>
+        </div>
+        <div class="event">
+          <h2>Arena</h2>
+          <p>12 players battle to the death.</p>
+        </div>
+        <div class="event">
+          <h2>Archery</h2>
+          <p>Archers have three shots at a moving target. The best hits win!</p>
+       </div>
+    </div>
       <script>
        // auto-sorting script
         document.addEventListener('DOMContentLoaded', () => {

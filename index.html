@@ -65,27 +65,34 @@
     }
 
     .row:nth-child(1) {
-      background: gold;
-      border: 1px solid gold;
+      background: #54e5e5;
+      border: 1px solid #54e5e5;
       color: white;
     }
 
     .row:nth-child(2) {
-      background: #c0c0c0;
-      border: 1px solid #c0c0c0;
+      background: #e8c55f;
+      border: 1px solid #e8c55f;
       color: white;
     }
 
     .row:nth-child(3) {
-      background: #cd7f32;
-      border: 1px solid #cd7f32;
+      background: #bcbcbc;
+      border: 1px solid #bcbcbc;
       color: white;
     }
 
+    img {
+      width: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     </style>
   </head>
     <body>
+      <img src="totallynottheolympics.png">
       <h1 align="center">Econolympics Leaderboard</h1>
       <h3 align="center">Note: It may take a few seconds for leaderboard to update.</h3>
       <ol id="container">
@@ -116,8 +123,8 @@
           // Put the elements back into the container
           elements.forEach(e => container.appendChild(e))
        })
-        
-       // players object 
+
+       // players object
        var playersObj = {
         "player1": {
           "username": "PLAYER1",
@@ -180,9 +187,9 @@
           "score": 0
         }
       };
-        
+
       var players = ["player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8", "player9", "player10", "player11", "player12"];
-      
+
         // run through every value of "players"
         for (var i = 0; i < players.length; i++) {
               // describe the username variable as the current player's username
@@ -196,7 +203,7 @@
               // set the innerHTML of these elements to the current player being looped through's username and score!
               playerName.innerHTML = username;
               playerScore.innerHTML = score;
-        } 
+        }
       </script>
     </body>
   </html>
